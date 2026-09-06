@@ -53,12 +53,28 @@ If we covered the Colab section in class:
 
 ---
 
+### 5. Optional: Exercise C2 — Branching & Pull Requests
+
+*Builds on Exercise D (Branch & Pull Request) — this time with a partner, adding the **peer review** step. Goal: practice the branch → PR → review → merge workflow real teams use, where someone else reviews before merging.*
+
+Same partner, same repo from class (or a new one — your choice).
+
+1. **Collaborator:** create a new branch (e.g. `add-yourname-notes`).
+2. Add or edit a file on that branch (e.g. add a line with your name to `README.md`).
+3. Stage → Commit → Push the branch (not `main`).
+4. On GitHub, open a **Pull Request** from your branch into `main`.
+5. **Owner:** open the Pull Request, check the **Files changed** tab for quality (clear commit message, no broken content, follows instructions), then click **Merge pull request**.
+6. Both: **Pull** on `main` afterwards so your local copy has the merged change.
+
+> 💡 This mirrors real teamwork: collaborators don't push straight to `main` — they propose changes via PR, and the owner (or a reviewer) gate-keeps quality before merging.
+
+---
+
 ### You're Ready for More
 
 Once you're comfortable with the basics, here are optional next steps to explore on your own:
 
-- **Branching** — creating a separate "copy" of your project to experiment safely
-- **Pull Requests** — a way to propose and review changes before merging them in
 - **GitHub Desktop** — a visual app for managing Git without any command line
+- **`.gitignore`** — telling Git which files to never track (e.g. secrets, temp files)
 
 These are topics for a future session. For now, focus on getting the core workflow smooth.

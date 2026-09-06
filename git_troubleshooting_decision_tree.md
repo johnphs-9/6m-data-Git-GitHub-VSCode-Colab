@@ -73,12 +73,16 @@ Problem: "fatal: remote origin already exists"
 Problem: "Permission denied" or "401 Unauthorized" when pushing
     ↓
 → GitHub couldn't verify who you are.
-  Solution:
+  Solution (recommended — browser sign-in):
     1. Make sure you're using HTTPS (not SSH). Your URL should start with https://
-    2. When VS Code or the terminal asks for a username/password,
+    2. In VS Code, click the account icon (bottom-left circle) → "Sign in with GitHub",
+       then approve in the browser window that opens. Try pushing again.
+
+  Only if browser sign-in fails (fallback — Personal Access Token):
+    3. When VS Code or the terminal asks for a username/password,
        use your GitHub username and a Personal Access Token (not your password).
        You can create one at: github.com → Settings → Developer settings → Personal access tokens
-    3. If still stuck, ask your instructor.
+    4. If still stuck, ask your instructor.
 ```
 
 ---
@@ -105,6 +109,31 @@ Problem: "Your branch is behind 'origin/main'"
     git pull
 
   Or in VS Code: click "Sync Changes" (it pulls before pushing).
+```
+
+---
+
+```
+Problem: A file shows "Merge Conflict" after pulling, or you see
+         <<<<<<<  =======  >>>>>>> markers inside a file
+    ↓
+→ The same lines were changed both locally and on GitHub — Git can't
+  guess which version you want, so it's asking you to decide.
+  This is NOT an error and your work is not lost.
+  Solution:
+    1. Open the file. Find the conflict markers:
+         <<<<<<< HEAD           (your local version)
+         ...
+         =======
+         ...
+         >>>>>>> origin/main    (the GitHub version)
+    2. Decide what the final text should be — keep one side, the other,
+       or a combination. In VS Code you can click the
+       "Accept Current / Accept Incoming / Accept Both" buttons shown
+       above the conflict, or edit the text by hand.
+    3. Delete the marker lines themselves (<<<<<<<, =======, >>>>>>>).
+    4. Save the file, then Stage → Commit (e.g. "Resolve conflict in
+       notes.txt") → Push as usual.
 ```
 
 ---
@@ -161,6 +190,7 @@ Problem: "Sync Changes" is greyed out or nothing happens
 | `Could not resolve host: github.com` | No internet connection | Check your Wi-Fi and try again |
 | `Your branch is ahead of 'origin/main'` | Local commits not pushed yet | Run `git push` |
 | `Your branch is behind 'origin/main'` | GitHub has newer changes | Run `git pull` |
+| `CONFLICT (content): Merge conflict in <file>` | Same lines changed both locally and on GitHub | Edit the file to resolve `<<<<<<<`/`=======`/`>>>>>>>` markers, then Stage → Commit → Push |
 
 ---
 
